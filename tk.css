@@ -1,0 +1,76 @@
+h1{
+	border:1px solid blue;
+	height: 80px;
+	width: 150px;
+	padding-left:30px;
+	padding-top: 30px;
+	border-radius: 20px;
+	box-shadow: 10px 10px 0px 1px black;
+}
+
+
+*{
+	color: white;
+}
+
+
+body{
+	background: dimgrey;
+}
+
+	
+#lang_btn{
+
+	position: relative;
+	left: 150px;
+	top:50px;
+	color: white;
+	background-color: dimgray
+}
+
+
+#allLanguages{
+	border: 1px solid blue;
+    height: 150px;
+    width: 400px;
+    float: left;
+    position: relative;
+    left: 100px;
+    top: 50px;
+    text-align: left;
+    border-radius: 20px;
+    background-color: black;
+}
+
+
+strong{
+    font-size: 20px;
+    position: relative;
+    top:60px;
+    font-family: cursive;
+    color: black;
+    text-decoration: overline;
+    text-decoration-color: blue;
+    letter-spacing: 3px;
+
+}
+
+#btn{
+	position: relative;
+	top:100px;
+
+}
+
+
+#questionAndAnswers {
+    position: relative;
+    top: 60px;
+}
+
+p {
+    font-size: 20px;
+    font-family: cursive;
+    color: initial;
+    letter-spacing: 3px;
+}
+

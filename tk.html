@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html ng-app="quizApp">
+<head>
+	<!-- css -->
+	 
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- angular  -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<!-- jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- javascript -->
+	<script type="text/javascript" src="tk.js"></script>
+	<script type="text/javascript" src="controllers/langCtrl.js"></script>
+	<script type="text/javascript" src="controllers/questions.js"></script>
+	<script type="text/javascript" src="controllers/quesMatrics.js"></script>
+	<link rel="stylesheet" type="text/css" href="tk.css">
+</head>
+<body >	
+
+
+<div >
+
+	<div class="container" >
+		<div class="page-header">
+			<h1>SURVEY</h1>
+		</div>
+
+		
+			
+		<div ng-controller='quiz' >
+
+			<div ng-show='setValue'  ng-init=" setValue = setValue">
+
+				<div ng-repeat="lang in languages" id="allLanguages"  >
+
+				<button type="button" class="btn btn-success" id="lang_btn" ng-click="lang_click(lang)">
+				{{lang}}</button>
+				</div>
+
+			</div>
+
+
+			<div>
+					<button type="button" class="btn btn-success" ng-click="toggle_window()" style="position:fixed;position:absolute;left:100px;top:160px;" ng-show='setValue'  ng-init=" setValue = setValue" >START SURVEY</button>
+			</div>
+
+
+			<div ng-hide='setValue' ng-init=" setValue = setValue">
+				<strong>Servey Questions</strong>
+				<div ng-controller="questions" id="btn" >
+
+
+
+					<button type="button" class="btn glyphicon glyphicon-ok-sign" ng-repeat="button in buttons " ng-class="{'btn-danger': button.selected === null,'btn-info': button.selected !== null}" style="color:black;" ng-click="showQues(button)">
+
+					</button>
+
+					<button ng-if="true" ng-init=" submit = Submit " ng-click="check(submit)" style="color:black;">
+					</button>
+
+
+					
+					<button class="btn btn-danger" style="color:black;" ng-click="checkSubmit()">
+						SUBMIT SURVEY
+					</button>
+
+
+
+					<div id="questionAndAnswers"> 
+						<p>{{question}}</p>	<br><br>
+
+
+
+								<div id="options" ng-repeat="option in options" ng-init="btn_no = button_id ">
+
+									<button class="btn btn-primary"    ng-click="clicked(option.answer,btn_no)" >{{option.answer}}	
+									</button>
+
+										<br><br>
+										
+								<div>
+									
+
+
+					</div>
+
+
+
+				</div>
+
+
+
+
+
+			</div>
+
+		</div>
+	</div>	
+</div>
+
+</body>
+</html>
